@@ -1,4 +1,6 @@
 import RecipeForm from './RecipeForm';
+// to do:
+// - save the recipe to a database or state management
 
 export default function Home() {
   return (
@@ -10,6 +12,12 @@ export default function Home() {
       <RecipeForm
         onSubmit={(data) => {
           console.log('Recipe submitted:', data);
+          // Here you would typically send the data to your backend or state management
+          const recipes = JSON.parse(localStorage.getItem('recipes') || '[]');
+          recipes.push(data);
+          localStorage.setItem('recipes', JSON.stringify(recipes));
+          alert('Recipe saved successfully!');
+          // Reset the form or redirect as needed
         }}
       ></RecipeForm>
     </main>
