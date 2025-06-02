@@ -33,7 +33,7 @@ export function AddRecipeForm({ userId }: { userId: string }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="border-2 border-red-500">
       <input name="title" placeholder="Title" required />
       <textarea name="ingredients" placeholder="Ingredients" required />
       <textarea name="instructions" placeholder="Instructions" required />
